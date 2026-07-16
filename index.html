@@ -1,1 +1,224 @@
-hello world
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wichtiger Hinweis: Test-Website</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #FAF7F2;
+            --color-card-bg: #FFFFFF;
+            --color-warning-border: #D97706;
+            --color-warning-bg: #FFFBEB;
+            --color-text-dark: #1E293B;
+            --color-text-muted: #64748B;
+            --color-sea-blue: #5B8A9A;
+            --color-sea-blue-dark: #3F6877;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text-dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .card {
+            background-color: var(--color-card-bg);
+            max-width: 600px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            text-align: center;
+            border-top: 6px solid var(--color-warning-border);
+        }
+
+        .warning-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-family: var(--font-primary);
+            font-size: 1.8rem;
+            color: var(--color-text-dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--color-warning-bg);
+            color: var(--color-warning-border);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            margin-bottom: 25px;
+        }
+
+        .alert-box {
+            background-color: var(--color-warning-bg);
+            border-left: 4px solid var(--color-warning-border);
+            padding: 15px 20px;
+            text-align: left;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            color: #78350F;
+        }
+
+        /* Countdown Area */
+        .countdown-container {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .timer-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid #E2E8F0;
+            border-top: 4px solid var(--color-sea-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-sea-blue-dark);
+            position: relative;
+            animation: spin 1s linear infinite;
+        }
+
+        .timer-number {
+            position: absolute;
+            /* Keep number upright while the border spins */
+            animation: unspin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes unspin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        .redirect-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text-dark);
+        }
+
+        /* Manual Redirect Button */
+        .btn-redirect {
+            display: inline-block;
+            background-color: var(--color-sea-blue);
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(91, 138, 154, 0.2);
+        }
+
+        .btn-redirect:hover {
+            background-color: var(--color-sea-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(91, 138, 154, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <span class="warning-icon">⚠️</span>
+        <br>
+        <span class="badge">Nicht offizelle Website</span>
+        
+        <h1>Achtung: Dies ist keine website vom Hotel!</h1>
+        
+        <p>Sie befinden sich auf einer <strong>nicht</strong> in verbindung stehender website zum Hotel .</p>
+        
+        <div class="alert-box">
+            <strong>Wichtiger Hinweis:</strong> Bitte nutzen Sie diese Website nicht für echte Buchungen, Zimmeranfragen oder Zahlungen. Es handelt sich hierbei ausschließlich um ein visuelles Design-Beispiel.
+        </div>
+
+        <div class="countdown-container">
+            <div class="timer-circle">
+                <span class="timer-number" id="countdown-num">10</span>
+            </div>
+            <p class="redirect-text">Sie werden in wenigen Sekunden automatisch zur Website weitergeleitet...</p>
+        </div>
+
+        <a href="https://www.hotelroyalmisano.it" class="btn-redirect" id="redirect-link">
+            Sofort zur offiziellen Website ➔
+        </a>
+    </div>
+
+    <script>
+        let timeLeft = 10;
+        const countdownEl = document.getElementById('countdown-num');
+        const targetUrl = "https://hotel.jungheim.site";
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            if (timeLeft >= 0) {
+                countdownEl.textContent = timeLeft;
+            }
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
