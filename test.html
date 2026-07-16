@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Royal Misano Adriatico | 3-Sterne-Hotel am Meer bei Riccione & Misano Circuit</title>
+    <meta name="description" content="Familiengeführtes 3-Sterne-Hotel direkt an der Riviera Romagnola – nur wenige Minuten von Misano World Circuit und Strand entfernt. Herzlich, gemütlich, seit 1970. Jetzt Zimmer anfragen!">
+    
+    <!-- Google Fonts: Montserrat (Headers) & Playfair Display (Serif accents/quotes) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --color-sand: #E8DCC8;
+            --color-sand-light: #F4ECE1;
+            --color-warm-white: #FAF7F2;
+            --color-sea-blue: #5B8A9A;
+            --color-sea-blue-dark: #3F6877;
+            --color-sea-blue-light: #A9C9D4;
+            --color-text-dark: #2F3E46;
+            --color-text-muted: #5F737C;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-accent: 'Playfair Display', serif;
+            --font-body: 'Open Sans', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-warm-white);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility Elements */
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-primary);
+            font-weight: 700;
+            color: var(--color-sea-blue-dark);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sticky Info Bar */
+        .top-bar {
+            background-color: var(--color-sea-blue-dark);
+            color: var(--color-warm-white);
+            font-family: var(--font-primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .top-bar .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .top-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .top-info a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-info a:hover {
+            color: var(--color-sand);
+        }
+
+        .license-badge {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            background: rgba(255,255,255,0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Navigation Header */
+        .main-header {
+            background-color: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--color-sand);
+            padding: 15px 0;
+            position: sticky;
+            top: 40px; /* offset for top-bar */
+            z-index: 999;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-title {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-sea-blue-dark);
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .logo-title span {
+            font-family: var(--font-accent);
+            font-weight: 400;
+            font-size: 1.2rem;
+            display: block;
+            color: var(--color-sea-blue);
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            list-style: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-sea-blue);
+        }
+
+        /* Hero Section with Parallax Feeling */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(47, 62, 70, 0.4), rgba(47, 62, 70, 0.55)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: #fff;
+            padding: 140px 0 100px 0;
+            text-align: center;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(transparent, var(--color-warm-white));
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--color-sand);
+            color: var(--color-text-dark);
+            padding: 8px 18px;
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .hero h1 {
+            font-family: var(--font-primary);
+            color: #fff;
+            font-size: 2.8rem;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            color: #f1f1f1;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons Style */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--color-sea-blue);
+            color: #fff;
+            border: 2px solid var(--color-sea-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-sea-blue-dark);
+            border-color: var(--color-sea-blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-sand);
+            border: 2px solid var(--color-sand);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-sand);
+            color: var(--color-text-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Wave SVG Separators */
+        .wave-separator {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: -2px 0;
+            background-color: transparent;
+        }
+
+        /* Section Global */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-sea-blue);
+            margin: 15px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-family: var(--font-accent);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Section Over-Us (Philosophy) */
+        .about {
+            background-color: var(--color-warm-white);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--color-text-dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-quote {
+            font-family: var(--font-accent);
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--color-sea-blue-dark);
+            border-left: 4px solid var(--color-sand);
+            padding-left: 20px;
+            margin: 30px 0;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-sea-blue-dark);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .about-badge span {
+            display: block;
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 1.1;
+        }
+
+        .about-badge label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-sand);
+        }
+
+        /* Location Section */
+        .location {
+            background-color: var(--color-sand-light);
+            position: relative;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .location-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .card-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--color-sea-blue-dark);
+        }
+
+        .card-content p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Surroundings Area */
+        .surroundings {
+            background-color: #fff;
+            padding: 40px 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .surroundings h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+
+        .surroundings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .surround-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .surround-number {
+            background-color: var(--color-sea-blue-light);
+            color: var(--color-sea-blue-dark);
+            font-weight: 700;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .surround-desc h4 {
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+
+        .surround-desc p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Offers and Services */
+        .services {
+            background-color: var(--color-warm-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .services-highlight {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .service-box {
+            background-color: #fff;
+            border-bottom: 4px solid var(--color-sand);
+            border-radius: 6px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+
+        .service-box:hover {
+            border-color: var(--color-sea-blue);
+            transform: translateY(-3px);
+        }
+
+        .service-box h4 {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            color: var(--color-sea-blue-dark);
+        }
+
+        .service-box p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .service-icon {
+            font-size: 1.6rem;
+        }
+
+        /* Rooms Box specifically styling */
+        .rooms-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rooms-image {
+            height: 220px;
+            background: url('https://hotelroyalmisano.it/wp-content/uploads/2021/09/hotel-royal-camera-doppia-dettaglio.jpg') center center/cover;
+        }
+
+        .rooms-content {
+            padding: 35px;
+        }
+
+        .rooms-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .rooms-content p {
+            color: var(--color-text-muted);
+            margin-bottom: 20px;
+        }
+
+        .room-features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .room-features-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: var(--color-text-dark);
+        }
+
+        .room-features-list li span {
+            color: var(--color-sea-blue);
+        }
+
+        /* Social Media Section */
+        .social {
+            background-color: var(--color-sea-blue-light);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .social-title {
+            margin-bottom: 15px;
+        }
+
+        .social p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-size: 1.05rem;
+        }
+
+        /* Fake Instagram Grid Widget */
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+        }
+
+        .instagram-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .instagram-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(47, 62, 70, 0.6);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .instagram-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .instagram-item:hover .instagram-overlay {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-text-dark);
+            color: #d1d8db;
+            padding: 60px 0 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 0.8fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo h3 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact h4, .footer-links h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-contact h4::after, .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--color-sand);
+        }
+
+        .footer-contact-list {
+            list-style: none;
+        }
+
+        .footer-contact-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-contact-list a:hover {
+            color: #fff;
+        }
+
+        .booking-platforms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .platform-badge {
+            background-color: rgba(255,255,255,0.08);
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .platform-badge:hover {
+            background-color: var(--color-sand);
+            color: var(--color-text-dark);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-legal-links a:hover {
+            color: #fff;
+        }
+
+        /* Mobile Sticky Actions (Bottom) */
+        .mobile-sticky-actions {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 -3px 15px rgba(0,0,0,0.1);
+            z-index: 1001;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .mobile-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 15px;
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .mobile-action-btn.call {
+            background-color: var(--color-sand-light);
+            color: var(--color-text-dark);
+        }
+
+        .mobile-action-btn.request {
+            background-color: var(--color-sea-blue);
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+            .surroundings-grid {
+                grid-template-columns: 1fr;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .instagram-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                font-size: 0.8rem;
+            }
+            .top-bar .container {
+                justify-content: center;
+            }
+            .main-header {
+                top: 72px;
+            }
+            .nav-links {
+                display: none; /* simple hidden navigation for preview purposes */
+            }
+            .hero {
+                padding: 100px 0 60px 0;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .mobile-sticky-actions {
+                display: grid;
+            }
+            body {
+                padding-bottom: 50px; /* offset for sticky mobile bar */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <a href="tel:+390541615526">📞 +39 0541 615526</a>
+                <a href="mailto:info@hotelroyalmisano.it">✉️ info@hotelroyalmisano.it</a>
+                <span>📍 Via Giuseppe Garibaldi, 23, Misano Adriatico, Italien</span>
+            </div>
+            <div class="license-badge">
+                Lizenz-Nr: 099005-AL-00103
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAV HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="logo-title">HOTEL ROYAL<span>★★★ Misano Adriatico</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#philosophy">Über uns</a></li>
+                <li><a href="#lage">Lage</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#instagram">Social Media</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">Familiengeführt seit 1970</span>
+                <h1>Willkommen im Hotel Royal – Ihr Zuhause am Meer in Misano Adriatico</h1>
+                <p>Feiner Sandstrand, herzliche Gastfreundschaft und die pulsierende Romagna vor der Haustür. Seit über 50 Jahren kümmert sich Familie Casali persönlich um Ihren perfekten Urlaub.</p>
+                <div class="hero-buttons">
+                    <a href="mailto:info@hotelroyalmisano.it?subject=Zimmeranfrage" class="btn btn-primary">🛎️ Zimmer anfragen</a>
+                    <a href="tel:+390541615526" class="btn btn-secondary">📞 Direkt anrufen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DECORATIVE WAVE -->
+    <svg class="wave-separator" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24C120 45.3 240 56 360 56C480 56 600 45.3 720 24C840 2.7 960 -8 1080 -8C1200 -8 1320 2.7 1440 24V74H0V24Z" fill="#FAF7F2"/>
+    </svg>
+
+    <!-- PHILOSOPHY (ÜBER UNS) -->
+    <section id="philosophy" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Über uns</h2>
+                <p>Eine Familie, ein Versprechen: Ihr Wohlbefinden</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Seit 1970 öffnet die Familie Casali die Türen des Hotel Royal für Gäste aus aller Welt – und das mit einer Herzlichkeit, die man spürt, sobald man die Lobby betritt. Was als kleiner Familienbetrieb begann, ist heute ein Ort, an dem sich über drei Generationen hinweg Gastfreundschaft, Leidenschaft und italienisches Lebensgefühl vereinen.</p>
+                    
+                    <p>Bei uns sind Sie kein Zimmer-Code, sondern Gast. Persönlich, aufmerksam und mit einem Lächeln kümmern wir uns um jedes Detail Ihres Aufenthalts – von der herzlichen Begrüßung bis zum letzten Espresso vor der Abreise. Diese Nähe zu unseren Gästen ist es, die viele Familien seit Jahrzehnten immer wieder zu uns zurückkehren lässt.</p>
+                    
+                    <div class="about-quote">
+                        "Über 50 Jahre Erfahrung, unzählige glückliche Gesichter – und noch immer dieselbe Leidenschaft wie am ersten Tag."
+                    </div>
+                    
+                    <p><strong>Willkommen in unserer Familie. Willkommen im Hotel Royal.</strong></p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Hotel Royal Lobby & Familie">
+                    <div class="about-badge">
+                        <span>50+</span>
+                        <label>Jahre Herzlichkeit</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DECORATIVE WAVE (TRANSITION TO LAGE) -->
+    <svg class="wave-separator" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24C120 4.3 240 -6 360 -6C480 -6 600 4.3 720 24C840 43.7 960 54 1080 54C1200 54 1320 43.7 1440 24V74H0V24Z" fill="#E8DCC8"/>
+    </svg>
+
+    <!-- LAGE & ATTRAKTIONEN -->
+    <section id="lage" class="location">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lage & Attraktionen</h2>
+                <p>Die perfekte Lage für jeden Urlaubstyp</p>
+                <p style="font-family: var(--font-body); font-style: normal; font-size: 1rem; max-width: 650px; margin: 20px auto 0 auto; color: var(--color-text-dark);">
+                    Ob Strandtag, Rennstrecken-Adrenalin oder ein Ausflug ins pulsierende Riccione – das Hotel Royal liegt genau dort, wo die Romagna am schönsten ist: zentral, ruhig und dennoch nah an allem, was zählt.
+                </p>
+            </div>
+
+            <div class="location-grid">
+                <!-- Strand -->
+                <div class="location-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1473116763269-255448993470?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-content">
+                        <span class="card-icon">🏖️</span>
+                        <h3>Direkt am feinen Sandstrand</h3>
+                        <p>Nur wenige Gehminuten trennen Sie von unserem Hotel und dem feinen, goldenen Sandstrand der Riviera Romagnola. Morgens ein Sprung ins Meer, abends ein Spaziergang an der Promenade.</p>
+                    </div>
+                </div>
+
+                <!-- Rennstrecke -->
+                <div class="location-card">
+                    <div class="card-img" style="background-image: url('https://hotelroyalmisano.it/wp-content/uploads/2021/10/hotel-royal-circuito-macchine-sportive.jpg');"></div>
+                    <div class="card-content">
+                        <span class="card-icon">🏁</span>
+                        <h3>Paradies für Motorsport-Fans</h3>
+                        <p>Das legendäre Misano World Circuit Marco Simoncelli liegt nur 5 Autominuten entfernt. Ideal für alle, die Motorrad-WM, Autorennen oder Trackdays hautnah erleben möchten.</p>
+                    </div>
+                </div>
+
+                <!-- Reitsport -->
+                <div class="location-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-content">
+                        <span class="card-icon">🐴</span>
+                        <h3>Ausritt gefällig?</h3>
+                        <p>Reitsport-Liebhaber kommen voll auf ihre Kosten: Das Horses Riviera Resort in San Giovanni in Marignano liegt in unmittelbarer Nähe und lädt zu Turnieren und Ausritten ein.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Umgebung Ausflugsziele -->
+            <div class="surroundings">
+                <h3>🎡 Attraktionen in der direkten Umgebung</h3>
+                <div class="surroundings-grid">
+                    <div class="surround-item">
+                        <div class="surround-number">1</div>
+                        <div class="surround-desc">
+                            <h4>Riccione & Viale Ceccarini</h4>
+                            <p>Shopping, exklusives Flanieren und die berühmteste Riviera-Nightlife-Meile Italiens.</p>
+                        </div>
+                    </div>
+                    <div class="surround-item">
+                        <div class="surround-number">2</div>
+                        <div class="surround-desc">
+                            <h4>Aquafan & Oltremare</h4>
+                            <p>Einer der spektakulärsten und größten Wasserparks Europas – Action für jedes Alter.</p>
+                        </div>
+                    </div>
+                    <div class="surround-item">
+                        <div class="surround-number">3</div>
+                        <div class="surround-desc">
+                            <h4>Indiana Golf</h4>
+                            <p>Ein herrlicher Abenteuer-Minigolfplatz eingebettet in ein riesiges, schattiges Parkareal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DECORATIVE WAVE (TRANSITION TO SERVICES) -->
+    <svg class="wave-separator" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 50C120 50 240 10 360 10C480 10 600 50 720 50C840 50 960 10 1080 10C1200 10 1320 50 1440 50V0H0V50Z" fill="#E8DCC8"/>
+    </svg>
+
+    <!-- SERVICES & ACCOMMODATION -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Unsere Services & Zimmer</h2>
+                <p>Alles, was einen perfekten Urlaub ausmacht</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Left Column: Hotel Services -->
+                <div class="services-highlight">
+                    <div class="service-box">
+                        <span class="service-icon">🍳</span>
+                        <h4>Traditionelle Küche</h4>
+                        <p>Genießen Sie hausgemachte Kuchen am reichhaltigen Frühstücksbuffet und abends authentische Spezialitäten der Romagna in unserem Restaurant.</p>
+                    </div>
+                    <div class="service-box">
+                        <span class="service-icon">🏖️</span>
+                        <h4>Strand-Komfort</h4>
+                        <p>Kostenlose, flauschige Strandtücher direkt aus dem Hotel – reisen Sie mit leichtem Gepäck und bester Laune an.</p>
+                    </div>
+                    <div class="service-box">
+                        <span class="service-icon">🚗</span>
+                        <h4>Parken & Garage</h4>
+                        <p>Sicherer, garantierter in unserer hoteleigenen Garage für optimalen Schutz Ihres Fahrzeugs.</p>
+                    </div>
+                    <div class="service-box">
+                        <span class="service-icon">🚲</span>
+                        <h4>Fahrradverleih</h4>
+                        <p>Erkunden Sie die lebendige Stadt und die lange Strandpromenade völlig kostenfrei mit unseren Fahrrädern.</p>
+                    </div>
+                    <div class="service-box" style="grid-column: span 2;">
+                        <span class="service-icon">🐾</span>
+                        <h4 style="display:inline-block; margin-left: 10px;">Haustiere herzlich willkommen!</h4>
+                        <p>Kleine Hunde und Katzen übernachten bei uns absolut kostenfrei – die gesamte Familie gehört schließlich im Urlaub zusammen.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Comfort Rooms Card -->
+                <div class="rooms-card">
+                    <div class="rooms-image"></div>
+                    <div class="rooms-content">
+                        <h3>Unsere komfortablen Zimmer</h3>
+                        <p>Die 25 bis 31 modernisierten und voll klimatisierten Gästezimmer bieten Ihnen die ideale Erholungsoase nach erlebnisreichen Tagen an der adriatischen Küste.</p>
+                        <ul class="room-features-list">
+                            <li><span>✓</span> Eigener Balkon</li>
+                            <li><span>✓</span> Klimaanlage</li>
+                            <li><span>✓</span> Kostenloses WLAN</li>
+                            <li><span>✓</span> Moderner Flachbild-TV</li>
+                            <li><span>✓</span> Bad mit Dusche, Bidet & Föhn</li>
+                            <li><span>✓</span> Zimmersafe für Wertsachen</li>
+                        </ul>
+                        <a href="mailto:info@hotelroyalmisano.it?subject=Zimmeranfrage" class="btn btn-primary" style="width: 100%;">Jetzt Zimmer anfragen & buchen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA SECTION -->
+    <section id="instagram" class="social">
+        <div class="container">
+            <h2 class="social-title">Folgen Sie uns für Urlaubsgefühle!</h2>
+            <p>Sonnenuntergänge am Meer, glückliche Gäste, kulinarische Highlights aus der Romagna – auf unserem Instagram-Profil nehmen wir Sie mit in unseren Hotelalltag. Schauen Sie vorbei!</p>
+            
+            <div class="instagram-grid">
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=400&q=80" alt="Insta 1">
+                    <div class="instagram-overlay">❤️ 124</div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=400&q=80" alt="Insta 2">
+                    <div class="instagram-overlay">❤️ 98</div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="Insta 3">
+                    <div class="instagram-overlay">❤️ 211</div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=400&q=80" alt="Insta 4">
+                    <div class="instagram-overlay">❤️ 156</div>
+                </div>
+            </div>
+
+            <a href="https://instagram.com" target="_blank" class="btn btn-primary" style="background-color: var(--color-sea-blue-dark);">📸 @HotelRoyalMisano auf Instagram folgen</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <h3>Hotel Royal</h3>
+                    <p>Ihr herzliches 3-Sterne-Zuhause an der Riviera Romagnola. Seit 1970 geführt von Familie Casali mit echter Liebe zur traditionellen Gastfreundschaft.</p>
+                    <p>Lizenznummer: 099005-AL-00103</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontakt & Anreise</h4>
+                    <ul class="footer-contact-list">
+                        <li>📍 Via Giuseppe Garibaldi, 23,<br>47843 Misano Adriatico (RN), Italien</li>
+                        <li>📞 Telefon: <a href="tel:+390541615526">+39 0541 615526</a></li>
+                        <li>✉️ E-Mail: <a href="mailto:info@hotelroyalmisano.it">info@hotelroyalmisano.it</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Partner & Portale</h4>
+                    <p style="font-size: 0.85rem; color:#a1abb0;">Buchen Sie uns auch auf Ihren Lieblingsportalen:</p>
+                    <div class="booking-platforms">
+                        <a href="https://booking.com" target="_blank" class="platform-badge">Booking.com</a>
+                        <a href="https://expedia.com" target="_blank" class="platform-badge">Expedia</a>
+                        <a href="https://tripadvisor.com" target="_blank" class="platform-badge">TripAdvisor</a>
+                        <a href="https://google.com/travel/hotels" target="_blank" class="platform-badge">Google Hotels</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 Hotel Royal Misano Adriatico – Ein Familienbetrieb seit 1970. Alle Rechte vorbehalten.
+                </div>
+                <div class="footer-legal-links">
+                    <a href="#">Impressum</a>
+                    <span>|</span>
+                    <a href="#">Datenschutzerklärung</a>
+                    <span>|</span>
+                    <a href="#">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE STICKY BOTTOM ACTIONS -->
+    <div class="mobile-sticky-actions">
+        <a href="tel:+390541615526" class="mobile-action-btn call">
+            📞 Anrufen
+        </a>
+        <a href="mailto:info@hotelroyalmisano.it?subject=Zimmeranfrage" class="mobile-action-btn request">
+            🛎️ Anfrage
+        </a>
+    </div>
+
+</body>
+</html>
